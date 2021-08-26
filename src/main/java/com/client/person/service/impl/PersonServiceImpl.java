@@ -7,8 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.UUID;
-
 @Service
 public class PersonServiceImpl implements PersonService {
 
@@ -17,7 +15,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public ResponseEntity<Boolean> publish(Person person) {
-        String topic = "person-" + UUID.randomUUID().toString();
+        String topic = "person";
         System.out.println(person.toString() + "\tPublishing");
         //restTemplate.postForEntity("http://{ip}:{port}/{topic}/publish", person, Boolean.class);
         return ResponseEntity.ok(true);

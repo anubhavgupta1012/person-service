@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,8 +20,8 @@ public class PersonController {
         return personService.publish(person);
     }
 
-    @PutMapping("/person/{uuid}")
+    @PostMapping("/{uuid}/person")
     public ResponseEntity<Boolean> subscribe(@RequestBody Person person, @PathVariable String uuid) {
-        return personService.subscribe(person,uuid);
+        return personService.subscribe(person, uuid);
     }
 }
