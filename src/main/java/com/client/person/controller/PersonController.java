@@ -4,6 +4,7 @@ import com.client.person.pojo.Person;
 import com.client.person.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,11 @@ public class PersonController {
 
     @Autowired
     private PersonService personService;
+
+    @GetMapping("/")
+    public String publish() {
+        return "Hi This side Anubhav";
+    }
 
     @PostMapping("/person")
     public ResponseEntity<Boolean> publish(@RequestBody Person person) {
