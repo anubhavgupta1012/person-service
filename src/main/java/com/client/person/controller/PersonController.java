@@ -21,6 +21,11 @@ public class PersonController {
         return "Hi This side Anubhav";
     }
 
+    @GetMapping("/anubhav")
+    public String publish2() {
+        return "Hi This side Anubhav, Publish 2";
+    }
+
     @PostMapping("/person")
     public ResponseEntity<Boolean> publish(@RequestBody Person person) {
         return personService.publish(person);
