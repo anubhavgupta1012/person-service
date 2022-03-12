@@ -18,12 +18,12 @@ public class PersonController {
 
     @GetMapping("/")
     public String publish() {
-        return "Hi This side Anubhav";
+        return "Hi This side Anubhav after deployment";
     }
 
     @GetMapping("/anubhav")
     public String publish2() {
-        return "Hi This side Anubhav, Publish 2";
+        return "Hi This side Anubhav, Publish 2 after deployment";
     }
 
     @PostMapping("/person")
