@@ -2,6 +2,7 @@ package com.client.person.controller;
 
 import com.client.person.pojo.Person;
 import com.client.person.service.PersonService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Slf4j
 public class PersonController {
 
     @Autowired
@@ -18,12 +20,17 @@ public class PersonController {
 
     @GetMapping("/")
     public String publish() {
-        return "Hi This side Anubhav after deployment";
+        String s = "Hi This side Anubhav after deployment";
+        log.info(s);
+        return s;
+
     }
 
     @GetMapping("/anubhav")
     public String publish2() {
-        return "Hi This side Anubhav, Publish 2 after deployment";
+        String s = "Hi This side Anubhav, Publish 2 after deployment";
+        log.info(s);
+        return s;
     }
 
     @PostMapping("/person")
